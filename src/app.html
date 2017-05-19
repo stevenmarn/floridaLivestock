@@ -4,9 +4,19 @@
 
   <loading-indicator loading.bind="router.isNavigating"></loading-indicator>
 
-  <header>
-    <h1>Aurelia Notes</h1>
-    <a class="button" href="#/notes/new">New Note</a>
+  <header class="flex-container" >
+    <div class="flex-row">
+      <div class="title flex-column">
+        Florida Livestock
+      </div>
+      <input class="flex-column left" type="text" placeholder = "&#xf002; What are you looking for?"  />
+      <input class="flex-column right" type="text" placeholder = "&#xf002; Enter your zip code"  />
+      
+      <button class="right">Search</button>
+      <a class="button button-info sell" href="#/notes/new">Sell My Stuff
+        <i class="fa fa-camera"></i></a>
+        
+    </div>
   </header>
 
   <main>

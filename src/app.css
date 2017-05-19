@@ -2,6 +2,44 @@
   box-sizing: border-box;
 }
 
+.flex-container {
+   display: -webkit-flex;
+   display: flex;
+}
+
+.flex-row{
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+}
+
+.flex-column{
+   -webkit-flex-direction: column;
+   flex-direction: column;
+}
+
+
+.left {
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+}
+.right {
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+}
+header .title {
+  font-size:2em; 
+  font-weight:bold; 
+  font-family:'Segoe UI'
+  , Tahoma
+  , Geneva
+  , Verdana
+  , sans-serif; 
+  width:800px;
+  padding-right: 40px;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -9,14 +47,29 @@ html, body {
   height: 100%;
 }
 
+header input {
+    background: #f3f3f3;
+    border: 1px solid #d8d8d8;
+    box-shadow: none;
+    -webkit-appearance: none;
+    height: 35px;
+    font-weight: lighter;
+    line-height: 17px;
+    outline: 0;
+    padding: 0 0 0 32px;
+    width: 20%;
+    height: 100%;
+    font-family: FontAwesome;
+}
 header {
   padding: 12px;
-  background-color: #F1F0F0;
+  background-color:lightsteelblue;
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 64px;
+  top:0;
+  left:0;
+  right:0;
+  height: 60px;
+  width: 100%
 }
 
 header h1 {
@@ -27,13 +80,15 @@ header h1 {
 
 header a.button {
   float: right;
+  margin-left: .2em;
+  background-color: black;
   text-decoration: none;
-  margin-top: 4px;
+  width: 140px;
 }
 
 main {
   position: absolute;
-  top: 64px;
+  top: 60px;
   left: 0;
   right: 0;
   bottom: 0;

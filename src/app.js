@@ -2,7 +2,7 @@ import {activationStrategy} from 'aurelia-router';
 
 export class App {
   configureRouter(config, router){
-    config.title = 'Aurelia Notes';
+    config.title = 'Florida Livestock';
     config.map([
       { route: '', moduleId: 'welcome' },
       {
