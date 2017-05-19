@@ -271,6 +271,15 @@ define('notebooks/index',['exports', 'backend/server', 'aurelia-framework'], fun
     return NotebooksIndex;
   }()) || _class);
 });
+define('resources/index',["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.configure = configure;
+  function configure(config) {}
+});
 define('notes/detail',['exports', 'backend/server', 'aurelia-router', 'aurelia-event-aggregator', 'resources/dialogs/common-dialogs', 'aurelia-framework'], function (exports, _server, _aureliaRouter, _aureliaEventAggregator, _commonDialogs, _aureliaFramework) {
   'use strict';
 
@@ -458,15 +467,6 @@ define('notes/no-selection',["exports"], function (exports) {
   var NoSelection = exports.NoSelection = function NoSelection() {
     _classCallCheck(this, NoSelection);
   };
-});
-define('resources/index',["exports"], function (exports) {
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.configure = configure;
-  function configure(config) {}
 });
 define('settings/index',['exports'], function (exports) {
   'use strict';
@@ -1572,12 +1572,12 @@ define('text!welcome.html', ['module'], function(module) { module.exports = "<te
 define('text!welcome.css', ['module'], function(module) { module.exports = ".welcome {\n  width: 100%;\n  height: 100%;\n\n  display: flex;\n\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n}\n"; });
 define('text!notebooks/index.html', ['module'], function(module) { module.exports = "<template>\n  <require from=\"./index.css\"></require>\n\n  <section class=\"notebook-list au-animate\">\n    <form submit.trigger=\"createNotebook()\">\n      <input type=\"text\" value.bind=\"notebookName\">\n      <button type=\"submit\">Create Notebook</button>\n    </form>\n    <div>\n      <ul>\n        <li repeat.for=\"notebook of notebookList\">\n          <a route-href=\"route: notes; params.bind: { filter: notebook.id }\">\n            <h3>${notebook.title}</h3>\n          </a>\n        </li>\n      </ul>\n    </div>\n  </section>\n</template>\n"; });
 define('text!notebooks/index.css', ['module'], function(module) { module.exports = "section.notebook-list {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n}\n\n\nsection.notebook-list ul {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n\nsection.notebook-list li {\n  border-bottom: 1px solid #F1F0F0;\n  padding: 12px;\n}\n\nsection.notebook-list h3 {\n  margin: 0;\n}\n\nsection.notebook-list a {\n  text-decoration: none;\n  color: black;\n}\n\nsection.notebook-list > form {\n  background-color: #F1F0F0;\n  padding: 12px;\n  border-bottom: 1px solid rgba(128, 128, 128, 0.25);\n}\n\nsection.notebook-list > form input {\n  font-size: 20px;\n  position: relative;\n  top: 2px;\n}\n\nsection.notebook-list > div {\n  flex: 1;\n}\n"; });
-define('text!notes/detail.css', ['module'], function(module) { module.exports = ".note {\n  padding: 12px;\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n}\n\n.note div.body {\n  flex: 1;\n  position: relative;\n}\n\n.note div.notebook-selector {\n  float: right;\n  margin-top: 8px;\n}\n\n.note div.notebook-selector span {\n  position: relative;\n  top: 2px;\n}\n\n.note input {\n  font-size: 28px;\n  background-color: transparent;\n  border: none;\n  outline: none;\n}\n\n.note textarea {\n  background: transparent;\n  resize: none;\n  outline: none;\n  border: none;\n  height: 100%;\n  font-size: 18px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  bottom: 0;\n}\n\n.note .button-bar {\n  text-align: right;\n}\n"; });
 define('text!notes/detail.html', ['module'], function(module) { module.exports = "<template>\n  <require from=\"./detail.css\"></require>\n\n  <form class=\"note\" submit.trigger=\"save()\">\n    <div class=\"title\">\n      <input type=\"text\" value.bind=\"note.title\" placeholder=\"title\">\n\n      <div class=\"notebook-selector\">\n        <span>In </span>\n        <select value.bind=\"note.notebookId\">\n          <option repeat.for=\"notebook of notebooks\" model.bind=\"notebook.id\">${notebook.title}</option>\n        </select>\n      </div>\n    </div>\n\n    <div class=\"body\">\n      <textarea value.bind=\"note.body\" placeholder=\"body\"></textarea>\n    </div>\n\n    <div class=\"button-bar\">\n      <button type=\"submit\">Save</button>\n    </div>\n  </form>\n</template>\n"; });
-define('text!notes/index.css', ['module'], function(module) { module.exports = ".notes {\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n}\n\n.notes .list {\n  padding: 8px;\n  width: 264px;\n  border-right: 1px solid rgba(128, 128, 128, 0.25);\n}\n\n.notes .list li {\n  padding: 12px;\n  border: 1px solid rgba(128, 128, 128, 0.25);\n  margin: 4px;\n  border-radius: 4px;\n}\n\n.notes .list li.active {\n  border-color: #0092C3;\n  box-shadow: 0 0 5px #0092C3;\n}\n\n.notes .list p, .notes .list h3 {\n  margin: 0;\n}\n\n.notes .list a {\n  text-decoration: none;\n  color: black;\n}\n\n.notes .detail {\n  flex: 1;\n  height: 100%;\n}\n"; });
+define('text!notes/detail.css', ['module'], function(module) { module.exports = ".note {\n  padding: 12px;\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n}\n\n.note div.body {\n  flex: 1;\n  position: relative;\n}\n\n.note div.notebook-selector {\n  float: right;\n  margin-top: 8px;\n}\n\n.note div.notebook-selector span {\n  position: relative;\n  top: 2px;\n}\n\n.note input {\n  font-size: 28px;\n  background-color: transparent;\n  border: none;\n  outline: none;\n}\n\n.note textarea {\n  background: transparent;\n  resize: none;\n  outline: none;\n  border: none;\n  height: 100%;\n  font-size: 18px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  bottom: 0;\n}\n\n.note .button-bar {\n  text-align: right;\n}\n"; });
 define('text!notes/index.html', ['module'], function(module) { module.exports = "<template>\n  <require from=\"./index.css\"></require>\n  <require from=\"resources/value-converters/truncate\"></require>\n\n  <section class=\"notes au-animate\">\n    <nav class=\"list\">\n      <ul>\n        <li repeat.for=\"note of noteList\" class=\"${note.isActive ? 'active' : ''}\">\n          <a route-href=\"route: edit; params.bind: {noteId: note.id}\">\n            <h3>${note.title}</h3>\n            <p>${note.body | truncate}</p>\n          </a>\n        </li>\n      </ul>\n    </nav>\n\n    <section class=\"detail\">\n      <router-view></router-view>\n    </section>\n  </section>\n</template>\n"; });
-define('text!notes/no-selection.css', ['module'], function(module) { module.exports = ".no-note-selected {\n  width: 100%;\n  height: 100%;\n\n  display: flex;\n\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n}\n"; });
+define('text!notes/index.css', ['module'], function(module) { module.exports = ".notes {\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n}\n\n.notes .list {\n  padding: 8px;\n  width: 264px;\n  border-right: 1px solid rgba(128, 128, 128, 0.25);\n}\n\n.notes .list li {\n  padding: 12px;\n  border: 1px solid rgba(128, 128, 128, 0.25);\n  margin: 4px;\n  border-radius: 4px;\n}\n\n.notes .list li.active {\n  border-color: #0092C3;\n  box-shadow: 0 0 5px #0092C3;\n}\n\n.notes .list p, .notes .list h3 {\n  margin: 0;\n}\n\n.notes .list a {\n  text-decoration: none;\n  color: black;\n}\n\n.notes .detail {\n  flex: 1;\n  height: 100%;\n}\n"; });
 define('text!notes/no-selection.html', ['module'], function(module) { module.exports = "<template>\n  <require from=\"./no-selection.css\"></require>\n\n  <section class=\"no-note-selected\">\n    Please select a note or&nbsp;<a route-href=\"route: new\">create a new note</a>.\n  </section>\n</template>\n"; });
+define('text!notes/no-selection.css', ['module'], function(module) { module.exports = ".no-note-selected {\n  width: 100%;\n  height: 100%;\n\n  display: flex;\n\n  align-items: center;\n  justify-content: center;\n  font-size: 28px;\n}\n"; });
 define('text!settings/index.css', ['module'], function(module) { module.exports = "section.settings {\n  padding: 12px;\n}\n"; });
 define('text!settings/index.html', ['module'], function(module) { module.exports = "<template>\n  <require from=\"./index.css\"></require>\n\n  <section class=\"settings au-animate\">\n    <form role=\"form\" submit.trigger=\"submit()\">\n      <div class=\"form-group\">\n        <label for=\"fn\">First Name</label>\n        <input type=\"text\" value.bind=\"firstName\" class=\"form-control\" id=\"fn\" placeholder=\"first name\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"ln\">Last Name</label>\n        <input type=\"text\" value.bind=\"lastName\" class=\"form-control\" id=\"ln\" placeholder=\"last name\">\n      </div>\n      <div class=\"form-group\">\n        <label>Full Name</label>\n        <p class=\"help-block\">${fullName}</p>\n      </div>\n      <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n    </form>\n  </section>\n</template>\n"; });
 define('text!resources/dialogs/message-box.html', ['module'], function(module) { module.exports = "<template>\n  <ai-dialog style=\"max-width: 325px\">\n    <ai-dialog-header>${model.title}</ai-dialog-header>\n\n    <ai-dialog-body>\n      ${model.message}\n    </ai-dialog-body>\n\n    <ai-dialog-footer>\n      <button repeat.for=\"option of model.options\" click.trigger=\"selectOption(option)\">${option}</button>\n    </ai-dialog-footer>\n  </ai-dialog>\n</template>"; });

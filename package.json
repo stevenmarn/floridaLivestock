@@ -2,6 +2,10 @@
   "name": "notes",
   "description": "An Aurelia client application.",
   "version": "0.1.0",
+    "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "repository": {
     "type": "???",
     "url": "???"
@@ -13,6 +17,7 @@
     "aurelia-dialog": "^1.0.0-beta.3.0.1",
     "aurelia-fetch-client": "^1.1.0",
     "bluebird": "^3.4.7",
+    "express": "^4.15.2",    
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "nprogress": "^0.2.0",
