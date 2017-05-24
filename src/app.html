@@ -1,11 +1,13 @@
 <template>
+  <require from="./search-bar"></require>
   <require from="./app.css"></require>
   <require from="resources/elements/loading-indicator"></require>
 
   <loading-indicator loading.bind="router.isNavigating"></loading-indicator>
 
   <header class="flex-container" >
-    <div class="flex-row">
+      <search-bar ></search-bar>
+    <!--<div class="flex-row">
       <div class="title flex-column">
         Florida Livestock
       </div>
@@ -16,7 +18,7 @@
       <a class="button sell" href="#/notes/new">Sell My Stuff
         <i class="fa fa-camera"></i></a>
         
-    </div>
+    </div>-->
   </header>
 
   <main>

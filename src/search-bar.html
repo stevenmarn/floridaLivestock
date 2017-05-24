@@ -1,0 +1,26 @@
+<template>
+    <require from="./search-bar.css"></require>
+    <div class="flex-container" >
+        <div class="flex-row">
+            <div class="text-nowrap title flex-column col-sm-6 col-md-3">
+                Florida Livestock
+            </div>
+            <div class="flex-column flex-column col-sm-6 col-md-6">
+                <div class="flex-row"></div>
+                <!--<i class="left fa fa-search"></i>-->
+                <input class="flex-column left  col-sm-3 col-md-8" type="text" placeholder = "&#xf002; What are you looking for?"/>
+                <a click.delegate="detectLocation()">
+                    <i class= "flex-column fa fa-map-marker"></i>
+                </a>
+
+                <input class="flex-column col-sm-1" type="text" placeholder = "&#xf002; Enter your zip code"  />
+                <input class="flex-column right col-sm-1" type="text" placeholder = "&#xf002; Enter your zip code"  />
+            </div>
+            
+            <button class="right">Search</button>
+            <a class="button sell" href="#/notes/new">Sell My Stuff
+                <i class="fa fa-camera"></i></a>
+            
+        </div>
+    </div>
+</template>
