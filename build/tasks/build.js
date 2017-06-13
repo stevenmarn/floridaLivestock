@@ -60,8 +60,7 @@ gulp.task('build-css', function() {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    
-    ['_build','build-system', 'build-html', 'build-css'],
+    ['build-system', 'build-html', 'build-css'],
     callback
   );
 });
