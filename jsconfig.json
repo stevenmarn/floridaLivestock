@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES6",
-<<<<<<< HEAD
     "module": "system",
-=======
-    "module": "amd",
->>>>>>> 3420a262dfab67117259d7ac478654b59464ab67
     "experimentalDecorators": true
   }
 }

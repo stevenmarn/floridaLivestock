@@ -1,5 +1,4 @@
 node_modules
-<<<<<<< HEAD
 jspm_packages
 bower_components
 .idea
@@ -9,7 +8,3 @@ build/reports
 coverage
 test/e2e/dist
 /export
-=======
-.idea
-.DS_STORE
->>>>>>> 3420a262dfab67117259d7ac478654b59464ab67

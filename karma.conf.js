@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Karma configuration
 // Generated on Fri Dec 05 2014 16:49:29 GMT-0500 (EST)
 
@@ -74,39 +73,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-=======
-"use strict";
-const path = require('path');
-const project = require('./aurelia_project/aurelia.json');
-
-let testSrc = [
-  { pattern: project.unitTestRunner.source, included: false },
-  'test/aurelia-karma.js'
-];
-
-let output = project.platform.output;
-let appSrc = project.build.bundles.map(x => path.join(output, x.name));
-let entryIndex = appSrc.indexOf(path.join(output, project.build.loader.configTarget));
-let entryBundle = appSrc.splice(entryIndex, 1)[0];
-let files = [entryBundle].concat(testSrc).concat(appSrc);
-
-module.exports = function(config) {
-  config.set({
-    basePath: '',
-    frameworks: [project.testFramework.id],
-    files: files,
-    exclude: [],
-    preprocessors: {
-      [project.unitTestRunner.source]: [project.transpiler.id]
-    },
-    'babelPreprocessor': { options: project.transpiler.options },
-    reporters: ['progress'],
-    port: 9876,
-    colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['Chrome'],
->>>>>>> 3420a262dfab67117259d7ac478654b59464ab67
     singleRun: false
   });
 };
