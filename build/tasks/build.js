@@ -1,5 +1,5 @@
-var gulp = require('gulp'),
-    exec = require('child_process').exec;
+var gulp = require('gulp');
+    // exec = require('child_process').exec;
 var runSequence = require('run-sequence');
 var changed = require('gulp-changed');
 var plumber = require('gulp-plumber');
@@ -12,15 +12,15 @@ var notify = require('gulp-notify');
 var browserSync = require('browser-sync');
 var htmlmin = require('gulp-htmlmin');
 
-gulp.task('build:jspm', function (cb) {
-    exec("node ./node_modules/jspm/jspm.js install", function(err, stdout, stderr) {
-        console.log(stdout);
-        console.error(stderr);
-        cb(err);
-    });
-});
+// gulp.task('build:jspm', function (cb) {
+//     exec("node ./node_modules/jspm/jspm.js install", function(err, stdout, stderr) {
+//         console.log(stdout);
+//         console.error(stderr);
+//         cb(err);
+//     });
+// });
 
-gulp.task('_build', ['build:jspm']);
+// gulp.task('_build', ['build:jspm']);
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
@@ -60,7 +60,7 @@ gulp.task('build-css', function() {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['_build', 'build-system', 'build-html', 'build-css'],
+    ['build-system', 'build-html', 'build-css'],
     callback
   );
 });
