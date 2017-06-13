@@ -89,6 +89,7 @@
     "devDependencies": {}
   },
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "jspm": "^0.16.53"
   }
 }
