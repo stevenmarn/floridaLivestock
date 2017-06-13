@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <require from="nav-bar.html"></require>
   <require from="bootstrap/css/bootstrap.css"></require>
   <require from="font-awesome/css/font-awesome.min.css"></require> 
@@ -7,4 +8,41 @@
   <div class="page-host">
     <router-view></router-view>
   </div>
+=======
+  <require from="./search-bar"></require>
+  <require from="./app.css"></require>
+  <require from="resources/elements/loading-indicator"></require>
+
+  <loading-indicator loading.bind="router.isNavigating"></loading-indicator>
+
+  <header class="flex-container" >
+      <search-bar ></search-bar>
+    <!--<div class="flex-row">
+      <div class="title flex-column">
+        Florida Livestock
+      </div>
+      <input class="flex-column left" type="text" placeholder = "&#xf002; What are you looking for?"  />
+      <input class="flex-column right" type="text" placeholder = "&#xf002; Enter your zip code"  />
+      
+      <button class="right">Search</button>
+      <a class="button sell" href="#/notes/new">Sell My Stuff
+        <i class="fa fa-camera"></i></a>
+        
+    </div>-->
+  </header>
+
+  <main>
+    <nav class="main">
+      <ul>
+        <li repeat.for="item of router.navigation" class="${item.isActive ? 'active' : ''}">
+          <a href.bind="item.href" title.bind="item.title">
+            <i class="fa fa-${item.settings.icon}"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <router-view></router-view>
+  </main>
+>>>>>>> 3420a262dfab67117259d7ac478654b59464ab67
 </template>
