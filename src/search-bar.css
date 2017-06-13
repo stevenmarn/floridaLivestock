@@ -1,0 +1,109 @@
+/*.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.flex-container {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+}*/
+
+
+.search-ads {
+  font-family: fontAwesome, arial;
+  margin-top: 10px;
+  margin-right: 0px;
+  width: 14em;
+  padding: 5px;
+  border: 1px solid #bbb;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-right: none;
+  background-color: #eee;
+}
+
+.button-submit {
+  background-color: #ddd; 
+  margin-top: 10px;
+  margin-left: -4px;
+  padding: 5px;
+  border: 1px solid #bbb;
+  border-left: 1px solid #ddd;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.locator {
+  background-color: #eee; 
+  margin-top: 10px;  
+  margin-left: -4px;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-left: 1px solid #ddd;
+  border-right: none;
+
+}
+
+.search-autocomplete {
+  margin-top: 10px;
+  width: 10em;
+  padding: 5px;
+  margin-left: -4px;
+  background-color: #eee; 
+  border: 1px solid #bbb;
+  border-left: none; 
+  border-right: none;
+}
+
+.button-submit:focus, 
+.locator:focus, 
+.search-autocomplete:focus,
+.search-ads:focus {
+  outline:none
+}
+
+.button-submit:hover, .locator:hover {
+  color: #008000
+}
+
+
+button.tooltips {
+  position: relative;
+  display: inline;
+}
+button.tooltips span {
+  position: absolute;
+  width:140px;
+  color: #FFFFFF;
+  background: #000000;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  visibility: hidden;
+  border-radius: 6px;
+  box-shadow: 0px 0px 6px #148018;
+}
+button.tooltips span:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -2px;
+  width: 0; height: 0;
+  border-bottom: 8px solid #000000;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+button:hover.tooltips span {
+  visibility: visible;
+  opacity: 1;
+  top: 30px;
+  left: 50%;
+  margin-left: -76px;
+  z-index: 999;
+}

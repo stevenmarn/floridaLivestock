@@ -1,0 +1,35 @@
+<template>
+  <require from="./welcome.css"></require>
+  <div class="ad-collection-search-list" style="height: 3400px;">
+    <ul class="ad-list-fluid masonry">
+      <li class="item" >
+        <div class="browse-categories">
+          <div class='header inner' >
+            ${categories.title}
+          </div>
+          <ul class="list">
+            <li repeat.for="item of categories.list">
+              ${item.title}
+            </li>
+
+          </ul>
+        </div>
+      </li>
+      <li class="item" repeat.for = "item of itemList">
+        <a href="${item.url}" title="${item.title}">
+          <img src="${item.imageUrl}" alt="${item.title}" width="195" class="inner">
+
+        </a>
+        <h5>${item.title}</h5>
+        <div border-bottom="1px solid #ccc">
+          <h4>${item.price}</h4>
+        </div>
+        <div ></div>
+      </li>
+    </ul>
+
+  </div>
+
+
+
+</template>

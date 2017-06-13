@@ -1,0 +1,17 @@
+<template>
+  <require from="./search-bar.css"></require>
+  <form class="flex-container" submit.delegate="setLocation()">
+      <input type=text class="search-ads flex-column" placeholder="&#xf002; What are you looking for?" />
+      <span>
+        <button class="tooltips fa fa-map-marker locator flex-column" href="#" style='cursor:pointer' 
+        change.delegate = "geoLocate()" 
+        click.delegate="changeValByRef()"
+        value = "Changed">
+        <span>Click to find location</span>
+        </button>
+      </span>
+
+      <input class="search-autocomplete flex-column" ref="locator" value.bind="location.name"/>
+      <button class='button-submit flex-column' type='submit' >Go!</button>
+  </form>
+</template>
