@@ -1,6 +1,6 @@
 System.config({
   defaultJSExtensions: true,
-  transpiler: false,
+  transpiler: "-a",
   paths: {
     "*": "dist/*",
     "github:*": "jspm_packages/github/*",
@@ -8,6 +8,8 @@ System.config({
   },
 
   map: {
+    "-a": "npm:babel-core@5.8.38",
+    "-a-runtime": "npm:babel-runtime@5.8.38",
     "aurelia-animator-css": "npm:aurelia-animator-css@1.0.1",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0",
     "aurelia-fetch-client": "npm:aurelia-fetch-client@1.0.1",
@@ -173,6 +175,9 @@ System.config({
       "aurelia-pal": "npm:aurelia-pal@1.0.0",
       "aurelia-path": "npm:aurelia-path@1.1.1",
       "aurelia-task-queue": "npm:aurelia-task-queue@1.1.0"
+    },
+    "npm:babel-runtime@5.8.38": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:bluebird@3.4.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
